@@ -1,0 +1,105 @@
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+body{ 
+    background-color: rgb(45, 45, 106);
+}  
+.navBar{
+    display: flex;
+    height: 15vh;
+    background-color: rgb(24, 24, 62);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pages{
+    margin: 50px;
+}
+
+.pages a{
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.flitImage{
+    margin: 15px;
+}
+
+.content{ 
+    background-color: rgb(45, 45, 106);
+}
+
+.movies{
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.movieContent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.movieCard{
+    background-color: rgb(179, 179, 179);
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    font-size: large;
+    padding: 10px;
+    grid-column: 1/4;
+}
+
+.form label{
+    margin-top: 20px;
+}
+
+.input{
+    margin-top: 20px;
+}
+
+.input .submit{
+    margin: 15px;
+}
+
+.movieContentForm{
+    background-color: white;
+    width: 80%;
+    height: 85%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}

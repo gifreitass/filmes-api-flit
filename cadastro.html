@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Filmes</title>
+</head>
+
+<body>
+    <header class="navBar">
+        <section class="flitImage">
+            <img src="images/logo_semsite_semfundo (1).png" alt="logo da Flit" width="130vw">
+        </section>
+        <section class="pages">
+            <a href="cadastro.html">Cadastro</a>
+            <a href="index.html">Home</a>
+        </section>
+    </header>
+    <main class="content">
+        <section class="movieContentForm">
+            <section class="title">
+                <h1>Cadastre seu filme:</h1>
+            </section>
+            <section class="formContent">
+                <form action="" method="post" class="form">
+                    <section class="input">
+                        <label for="title">Título:</label>
+                        <input type="text" id="title"> <br>
+                    </section>
+                    <section class="input">
+                        <label for="overview">Sinopse:</label>
+                        <input type="text" id="overview"> <br>
+                    </section>
+                    <section class="input">
+                        <label for="genre">Gênero:</label>
+                        <input type="text" id="genre"> <br>
+                    </section>
+                    <section class="input">
+                        <label for="voteAverage">Nota:</label>
+                        <input type="text" id="voteAverage"> <br>
+                    </section>
+                    <section class="input">
+                        <input type="submit" class="submit" id="submit">
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+</body>
+<script src="dist/index.js"></script>
+</html>

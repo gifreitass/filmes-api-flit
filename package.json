@@ -1,0 +1,27 @@
+{
+  "name": "filmes-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gifreitass/filmes-api-flit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gifreitass/filmes-api-flit/issues"
+  },
+  "homepage": "https://github.com/gifreitass/filmes-api-flit#readme",
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "node-fetch": "2.6.1"
+  }
+}
