@@ -1,8 +1,8 @@
 "use strict";
 const movieContent = document.getElementById('movieContent');
 //LISTANDO OS DADOS DA API
-function moviesApi() {
-    fetch('https://apigenerator.dronahq.com/api/DshgzEBY/movies')
+async function moviesApi() {
+    await fetch('https://apigenerator.dronahq.com/api/DshgzEBY/movies')
         .then(function (response) {
         return response.json();
     })
@@ -11,13 +11,35 @@ function moviesApi() {
     });
 }
 moviesApi();
+async function moviesGenre(genreNumber) {
+    const filteredGenres = await fetch('https://apigenerator.dronahq.com/api/Dd1Qk1iN/genre')
+        .then(function (response) {
+        return response.json();
+    })
+        .then(function (data) {
+        const genres = [];
+        data.forEach(genre => {
+            genreNumber.forEach(number => {
+                if (genre.id === number) {
+                    genres.push(genre.name);
+                }
+            });
+        });
+        return genres;
+    });
+    return filteredGenres;
+}
 //FUNÇÃO PARA PERCORRER OS OBJETOS DO ARRAY DE FILMES
 function renderMoviesCards(movieList) {
-    movieList.forEach(movie => {
+    let genre = [];
+    movieList.forEach(async (movie) => {
+        if (movie.genre !== null) {
+            genre = await moviesGenre(movie.genre);
+        }
         let movieCard = `<div class="movieCard">
         <p><b>Título: </b>${movie.title}<br>
         <b>Sinopse: </b>${movie.overview}<br>
-        <b>Gênero: </b>${movie.genre}<br>
+        <b>Gênero: </b>${genre.join(', ')}<br>
         <b>Nota: </b>${movie.vote_average}
         </p>
     </div>`;
@@ -44,10 +66,14 @@ function submit(e) {
     const overviewValue = document.getElementById('overview');
     const genreValue = document.getElementById('genre');
     const voteAverage = document.getElementById('voteAverage');
+    const genreStringValues = genreValue.value.split(',');
+    const genreNumberValues = genreStringValues.map(stringValue => {
+        return Number(stringValue);
+    });
     const valueInputs = {
         title: titleValue.value,
         overview: overviewValue.value,
-        genre: genreValue.value.split(','),
+        genre: genreNumberValues,
         vote_average: parseFloat(voteAverage.value)
     };
     addMovie(valueInputs);
